@@ -47,14 +47,15 @@ function printQuote(){
   let randomQuote = getRandomQuote(); 
   let message = `<p class="quote"> ${randomQuote.quote}</p>
                  <p class="source"> ${randomQuote.source}`    
-//Checks if quote selected have a `ciation` property.         
+//Checks if quote selected have a `ciation` property to desplay with quote.         
   if (randomQuote.citation) {
     message += `<span class="citation">${randomQuote.citation}</span>`;
   }
-//Checks if quote selected have a `year` property.
+//Checks if quote selected have a `year` property to desplay with quote.
   if (randomQuote.year) {
     message +=`<span class="year">${randomQuote.year}</span>`;
   }
+//Checks if quote selected have a `tags` property to desplay with quote.
   if (randomQuote.tags) {
   message += `<span class="tags">Tags: ${randomQuote.tags}</span>`
   }
