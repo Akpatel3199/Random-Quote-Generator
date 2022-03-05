@@ -3,23 +3,20 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
-// For assistance: 
-  // Check the "Project Resources" section of the project instructions
-  // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
-/*** 
- * `quotes` array 
-***/
-// Created Array of object. Where all the quotes are stored.
+
+//Array of an object. Where all the values are stored.
 const quotes = [
   {
     quote:`It does not matter how slowly you go, as long as you do not stop.`,
-    source:`Confucius`
+    source:`Confucius`,
+    tags: `Motivation, Courage, Inspiration`
   },
   {
     quote:`Relationships are based on four principles: respect, understanding, acceptance and appreciation.`,
     source:`Mahatma Gandhi`,
-    citation:`Speech`
+    citation:`Speech`,
+    tags: `Love, Inspirational, Relationship`
   },
   {
     quote:`Money and success don’t change people; they merely amplify what is already there.`,
@@ -27,13 +24,15 @@ const quotes = [
   },
   {
     quote:`Everything negative – pressure, challenges – is all an opportunity for me to rise.`,
-    source:`Kobe Bryant`
+    source:`Kobe Bryant`,
+    tags: `Motivation, Encouragement `
   },
   {
     quote:`Some people can’t believe in themselves until someone else believes in them first.`,
     source: `Sean Maguire`,
     citation: `Good Will Hunting`,
     year: `1997`,
+    tags: `Encouragement, Motivation`
   }
 ];
 
@@ -48,13 +47,16 @@ function printQuote(){
   let randomQuote = getRandomQuote(); 
   let message = `<p class="quote"> ${randomQuote.quote}</p>
                  <p class="source"> ${randomQuote.source}`    
-//Checks if quote selected have a ciation property.         
+//Checks if quote selected have a `ciation` property.         
   if (randomQuote.citation) {
     message += `<span class="citation">${randomQuote.citation}</span>`;
   }
-//Checks if quote selected have a year property.
+//Checks if quote selected have a `year` property.
   if (randomQuote.year) {
     message +=`<span class="year">${randomQuote.year}</span>`;
+  }
+  if (randomQuote.tags) {
+  message += `<span class="tags">Tags: ${randomQuote.tags}</span>`
   }
   `</p>`;
 //Desplays message variable to `quote-box`.

@@ -114,7 +114,10 @@ h1 {
   content: ", ";
   font-style: normal;
 }
-
+.tags:before {
+  content: ", ";
+  font-style: italic;
+}
 @media (min-width: 768px) {
   body {
     padding: 25px;
