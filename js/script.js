@@ -37,35 +37,30 @@ const quotes = [
   }
 ];
 
-
-/***
- * `getRandomQuote` function
-***/
 //Function `getRandomQuote` selects random quote from `quotes` array and returns into `quoteIndex` variable.
 function getRandomQuote() {
   let quoteIndex = Math.floor(Math.random()*quotes.length); 
   return quotes[quoteIndex];
 }
 
-
-/***
- * `printQuote` function
-***/
-//Function `printQuote` prints random quotes.
+//Function `printQuote` prints random quotes into `quote-box`.
 function printQuote(){
-  let randomQuote = getRandomQuote();
+  let randomQuote = getRandomQuote(); 
   let message = `<p class="quote"> ${randomQuote.quote}</p>
                  <p class="source"> ${randomQuote.source}`    
-          
+//Checks if quote selected have a ciation property.         
   if (randomQuote.citation) {
     message += `<span class="citation">${randomQuote.citation}</span>`;
   }
+//Checks if quote selected have a year property.
   if (randomQuote.year) {
     message +=`<span class="year">${randomQuote.year}</span>`;
   }
   `</p>`;
+//Desplays message variable to `quote-box`.
   document.getElementById('quote-box').innerHTML = message;    
 }
+
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
